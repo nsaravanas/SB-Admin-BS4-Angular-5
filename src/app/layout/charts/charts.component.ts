@@ -169,7 +169,6 @@ export class ChartsComponent implements OnInit {
     ngOnInit() {
         this.route.data.subscribe((data: { routeData: any }) => {
             this.heading = data['name'];
-            console.log(this.route);
         })
     }
 }
