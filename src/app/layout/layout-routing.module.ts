@@ -23,6 +23,7 @@ const routes: Routes = [
             { path: 'storage-menu', loadChildren: './charts/charts.module#ChartsModule', data: { name: 'storage-menu' } },
             { path: 'storage-database', loadChildren: './charts/charts.module#ChartsModule', data: { name: 'storage-database' } },
             { path: 'storage-cache', loadChildren: './charts/charts.module#ChartsModule', data: { name: 'storage-cache' } },
+            { path: 'report', loadChildren: './charts/charts.module#ChartsModule', data: { name: 'report' } },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
             { path: 'forms', loadChildren: './form/form.module#FormModule' },
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
