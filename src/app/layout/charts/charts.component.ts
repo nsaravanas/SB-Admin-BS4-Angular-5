@@ -165,10 +165,18 @@ export class ChartsComponent implements OnInit {
 
     private heading: string;
     private title: string;
+    private isDashboard: boolean = true;
+    private isProcess: boolean = true;
+    private isServer: boolean = true;
+    private isStorage: boolean = true;
 
     ngOnInit() {
         this.route.data.subscribe((data: { routeData: any }) => {
             this.heading = data['name'];
+            this.isDashboard = data['type'] !== 'dashboard';
+            this.isProcess = data['type'] !== 'process';
+            this.isServer = data['type'] !== 'server';
+            this.isStorage = data['type'] !== 'storage';
         })
     }
 }
