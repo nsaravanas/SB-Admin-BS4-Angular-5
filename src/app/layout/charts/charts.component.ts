@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
     animations: [routerTransition()]
 })
 export class ChartsComponent implements OnInit {
+    public alerts: Array<any> = [];
+
     // bar chart
     public barChartOptions: any = {
         scaleShowVerticalLines: false,
@@ -169,6 +171,7 @@ export class ChartsComponent implements OnInit {
     private isProcess: boolean = true;
     private isServer: boolean = true;
     private isStorage: boolean = true;
+    private isReport: boolean = true;
 
     ngOnInit() {
         this.route.data.subscribe((data: { routeData: any }) => {
@@ -185,6 +188,10 @@ export class ChartsComponent implements OnInit {
             this.isStorage = data['type'] !== 'storage';
             if (!this.isStorage) {
                 this.setStorage();
+            }
+            this.isReport = data['type'] !== 'report';
+            if (!this.isReport) {
+                this.setReport();
             }
         })
     }
@@ -283,6 +290,36 @@ export class ChartsComponent implements OnInit {
             'cached'
         ];
         this.pieChartData = [140, 20, 40];
+    }
+
+    setReport() {
+        this.alerts.push(
+            {
+                id: 1,
+                type: 'success',
+                message: `Server 2 back online`
+            },
+            {
+                id: 2,
+                type: 'warning',
+                message: `server 1 high memory utilization`
+            },
+            {
+                id: 3,
+                type: 'danger',
+                message: `DB connection reached max`
+            },
+            {
+                id: 4,
+                type: 'primary',
+                message: `cache 2 is standby`
+            }
+        );
+    }
+
+    public closeAlert(alert: any) {
+        const index: number = this.alerts.indexOf(alert);
+        this.alerts.splice(index, 1);
     }
 
 }

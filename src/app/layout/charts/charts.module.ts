@@ -5,9 +5,10 @@ import { GaugeModule } from 'angular-gauge';
 import { ChartsRoutingModule } from './charts-routing.module';
 import { ChartsComponent } from './charts.component';
 import { PageHeaderModule } from '../../shared';
+import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-    imports: [CommonModule, Ng2Charts, ChartsRoutingModule, PageHeaderModule, GaugeModule.forRoot()],
+    imports: [CommonModule, Ng2Charts, ChartsRoutingModule, PageHeaderModule, GaugeModule.forRoot(), NgbAlertModule.forRoot()],
     declarations: [ChartsComponent]
 })
 export class ChartsModule { }

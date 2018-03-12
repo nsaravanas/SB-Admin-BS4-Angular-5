@@ -37,19 +37,23 @@ export class DashboardComponent implements OnInit {
         //     {
         //         id: 1,
         //         type: 'success',
-        //         message: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        //         Voluptates est animi quibusdam praesentium quam, et perspiciatis,
-        //         consectetur velit culpa molestias dignissimos
-        //         voluptatum veritatis quod aliquam! Rerum placeat necessitatibus, vitae dolorum`
+        //         message: `Server 2 back online`
         //     },
         //     {
         //         id: 2,
         //         type: 'warning',
-        //         message: `Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        //         Voluptates est animi quibusdam praesentium quam, et perspiciatis,
-        //         consectetur velit culpa molestias dignissimos
-        //         voluptatum veritatis quod aliquam! Rerum placeat necessitatibus, vitae dolorum`
-        //     }
+        //         message: `server 1 high memory utilization`
+        //     },
+        //     {
+        //         id: 3,
+        //         type: 'danger',
+        //         message: `DB connection reached max`
+        //     },
+        //     {
+        //         id: 4,
+        //         type: 'primary',
+        //         message: `cache 2 is standby`
+        //     }            
         // );
     }
 
