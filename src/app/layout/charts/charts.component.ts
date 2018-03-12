@@ -175,8 +175,114 @@ export class ChartsComponent implements OnInit {
             this.heading = data['name'];
             this.isDashboard = data['type'] !== 'dashboard';
             this.isProcess = data['type'] !== 'process';
+            if (!this.isProcess) {
+                this.setProcess();
+            }
             this.isServer = data['type'] !== 'server';
+            if (!this.isServer) {
+                this.setServer();
+            }
             this.isStorage = data['type'] !== 'storage';
+            if (!this.isStorage) {
+                this.setStorage();
+            }
         })
     }
+
+    setProcess() {
+        this.barChartOptions = {
+            scaleShowVerticalLines: false,
+            responsive: true
+        };
+        this.barChartLabels = [
+            '10:00',
+            '10:10',
+            '10:20',
+            '10:30',
+            '10:40',
+            '10:50',
+            '11:00'
+        ];
+
+        this.barChartData = [
+            { data: [65, 59, 80, 81, 56, 55, 40], label: 'received' },
+            { data: [28, 48, 40, 19, 86, 27, 90], label: 'transformed' },
+            { data: [28, 48, 40, 19, 86, 27, 90], label: 'processed' },
+            { data: [28, 48, 40, 19, 86, 27, 90], label: 'falied' },
+            { data: [28, 48, 40, 19, 86, 27, 90], label: 'skipped' }
+        ];
+
+        this.doughnutChartLabels = [
+            'recived',
+            'processed',
+            'skipped'
+        ];
+        this.doughnutChartData = [12300, 11000, 1300];
+
+        this.lineChartData = [
+            // { data: [100, 100, 100, 100, 100, 100, 100], label: 'Total RAM' },
+            { data: [28, 48, 40, 19, 86, 27, 90], label: 'Used' },
+            { data: [18, 48, 77, 9, 12, 27, 40], label: 'Cached' }
+        ];
+        this.lineChartLabels = [
+            '10:00',
+            '11:00',
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00'
+        ];
+    }
+
+    setServer() {
+
+        this.doughnutChartLabels = [
+            'used',
+            'cached',
+            'mounted'
+        ];
+        this.doughnutChartData = [12300, 11000, 1300];
+
+        this.lineChartData = [
+            // { data: [100, 100, 100, 100, 100, 100, 100], label: 'Total RAM' },
+            { data: [28, 48, 40, 19, 86, 27, 90], label: 'Used' },
+            { data: [18, 48, 77, 9, 12, 27, 40], label: 'Cached' }
+        ];
+        this.lineChartLabels = [
+            '10:00',
+            '11:00',
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00'
+        ];
+    }
+
+    setStorage() {
+
+        this.lineChartData = [
+            // { data: [100, 100, 100, 100, 100, 100, 100], label: 'Total RAM' },
+            { data: [28, 48, 40, 19, 86, 27, 90], label: 'Used' },
+            { data: [18, 48, 77, 9, 12, 27, 40], label: 'Cached' }
+        ];
+        this.lineChartLabels = [
+            '10:00',
+            '11:00',
+            '12:00',
+            '13:00',
+            '14:00',
+            '15:00',
+            '16:00'
+        ];
+
+        this.pieChartLabels = [
+            'active',
+            'inactive',
+            'cached'
+        ];
+        this.pieChartData = [140, 20, 40];
+    }
+
 }
