@@ -43,6 +43,9 @@
                         [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
                     </canvas>
                 </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
             </div>
         </div>
         <div class="col col-sm-6">
@@ -54,6 +57,9 @@
                     <canvas baseChart height="130" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
                         [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
                     </canvas>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
                 </div>
             </div>
         </div>
@@ -69,6 +75,9 @@
                         [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
                     </canvas>
                 </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
             </div>
         </div>
         <div class="col col-sm-6">
@@ -80,6 +89,9 @@
                     <canvas baseChart height="130" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
                         [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
                     </canvas>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
                 </div>
             </div>
         </div>
@@ -116,28 +128,78 @@
             </div>
         </div>
     </div>
+    <div class="row" [hidden]="isServer">
+        <div class="col col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Free RAM
+                </div>
+                <div class="card-body">
+                    <mwl-gauge [max]="100" [dialStartAngle]="-90" [dialEndAngle]="-90.001" [value]="30" [animated]="true" [animationDuration]="1">
+                    </mwl-gauge>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Free HDD
+                </div>
+                <div class="card-body">
+                    <mwl-gauge [max]="100" [dialStartAngle]="-90" [dialEndAngle]="-90.001" [value]="70" [animated]="true" [animationDuration]="1">
+                    </mwl-gauge>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    IO
+                </div>
+                <div class="card-body">
+                    <mwl-gauge [max]="100" [dialStartAngle]="-90" [dialEndAngle]="-90.001" [value]="40" [animated]="true" [animationDuration]="1">
+                    </mwl-gauge>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row" [hidden]="isStorage">
         <div class="col col-sm-6">
             <div class="card mb-3">
                 <div class="card-header">
-                    Polar Area Chart
+                    RAM Usage
                 </div>
                 <div class="card-body">
-                    <canvas baseChart height="130px" [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType"
-                        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                    <canvas baseChart height="130" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+                        [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
                     </canvas>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
                 </div>
             </div>
         </div>
         <div class="col col-sm-6">
             <div class="card mb-3">
                 <div class="card-header">
-                    Polar Area Chart
+                    HDD Usage
                 </div>
                 <div class="card-body">
-                    <canvas baseChart height="130px" [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType"
-                        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                    <canvas baseChart height="130" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+                        [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
                     </canvas>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
                 </div>
             </div>
         </div>
@@ -153,6 +215,9 @@
                         (chartClick)="chartClicked($event)">
                     </canvas>
                 </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
             </div>
         </div>
         <div class="col col-sm-6">
@@ -164,6 +229,41 @@
                     <canvas baseChart height="150px" [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" (chartHover)="chartHovered($event)"
                         (chartClick)="chartClicked($event)">
                     </canvas>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" [hidden]="isStorage">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Polar Area Chart
+                </div>
+                <div class="card-body">
+                    <canvas baseChart height="130px" [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType"
+                        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Polar Area Chart
+                </div>
+                <div class="card-body">
+                    <canvas baseChart height="130px" [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend" [chartType]="polarAreaChartType"
+                        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
+                <div class="card-footer" align="center">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
                 </div>
             </div>
         </div>
